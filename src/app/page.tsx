@@ -1,5 +1,5 @@
-import Link from "next/link";
 import TypingPrefix from "@/components/typing-prefix";
+import CVReveal from "@/components/cv-reveal";
 
 export default function Home() {
   return (
@@ -10,11 +10,11 @@ export default function Home() {
             <h1 className="text-6xl sm:text-8xl font-bold">Jan Rezek</h1>
             <p className="text-xl sm:text-4xl text-center font-light text-gray-300">
               <span className="text-red-500">&lt;</span>{" "}
-              <TypingPrefix delayMs={2000} text="Junior"/>{" "} Full Stack Developer {" "}
+              <TypingPrefix delayMs={2000} text="Junior"/>{" "} Full-Stack Developer {" "}
               <span className="text-red-500">&gt;</span>
             </p>
           </div>
-          <Link href="/#cv" className="text-xl text-center underline">See my CV</Link>
+          <CVReveal />
         </div>
       </main>
     </div>
