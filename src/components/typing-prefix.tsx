@@ -26,6 +26,15 @@ export default function TypingPrefix({
     return () => clearTimeout(timeoutId);
   }, [typedLength, text, speedMs, delayMs]);
 
+  // Pokud se otevře CV, okamžitě dopiš text, aby seděl počet písmen pro animaci
+  useEffect(() => {
+    function handleCvOpen() {
+      setTypedLength(text.length);
+    }
+    window.addEventListener("cv:open", handleCvOpen);
+    return () => window.removeEventListener("cv:open", handleCvOpen);
+  }, [text.length]);
+
   const typed = text.slice(0, typedLength);
 
   return (

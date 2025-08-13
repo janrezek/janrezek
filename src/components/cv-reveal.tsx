@@ -8,6 +8,7 @@ export default function CVReveal() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [openFrom, setOpenFrom] = useState<OpenFrom>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
+  const sheetRef = useRef<HTMLDivElement | null>(null);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [scrollThumb, setScrollThumb] = useState<{ height: number; top: number }>({ height: 0, top: 0 });
   const [scrollActive, setScrollActive] = useState(false);
@@ -16,6 +17,9 @@ export default function CVReveal() {
     setOpenFrom(from);
     setIsOpen(true);
     setIsAnimating(true);
+    try {
+      window.dispatchEvent(new CustomEvent("cv:open", { detail: from }));
+    } catch {}
   }, []);
 
   const close = useCallback(() => {
@@ -25,6 +29,17 @@ export default function CVReveal() {
     }
 
     const overlay = overlayRef.current;
+
+    // fire reverse animation for homepage
+    try {
+      const origin = openFrom ?? { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+      window.dispatchEvent(new CustomEvent("cv:close", { detail: origin }));
+    } catch {}
+
+    // kick sheet reverse motion
+    if (sheetRef.current) {
+      sheetRef.current.classList.add("cv-sheet-exit");
+    }
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -45,7 +60,7 @@ export default function CVReveal() {
       setOpenFrom(null);
     };
     overlay.addEventListener("transitionend", handler, { once: true });
-  }, []);
+  }, [openFrom]);
 
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
@@ -226,7 +241,7 @@ export default function CVReveal() {
           <div className="absolute inset-0" />
 
           <div className="cv-sheet-wrapper absolute inset-0 grid place-items-center">
-            <div className="cv-sheet relative w-[min(900px,92vw)] max-h-[84vh] h-[680px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-3xl shadow-2xl overflow-hidden cv-sheet-enter">
+            <div ref={sheetRef} className="cv-sheet relative w-[min(900px,92vw)] max-h-[84vh] h-[680px] rounded-2xl border border-white/10 bg-white/5 backdrop-blur-3xl shadow-2xl overflow-hidden cv-sheet-enter">
 
               <div className="relative z-10 h-full flex flex-col">
                 <div className="flex items-center justify-between p-5 border-b border-white/10">

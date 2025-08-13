@@ -10,7 +10,7 @@ export default function Header() {
 
             </div>
             <div className="flex items-center gap-10 w-50 justify-center text-gray-300">
-                <Link href="/about-me" className="relative whitespace-nowrap hover:text-white transition-all duration-300 text-xs group flex items-center justify-center gap-2">
+                <Link href="/dev" className="relative whitespace-nowrap hover:text-white transition-all duration-300 text-xs group flex items-center justify-center gap-2">
                     <ArrowLeftIcon className="w-3 h-3 group-hover:-translate-x-0.5 transition-all duration-300" />
                     <span className="whitespace-nowrap h-3.5">ABOUT ME</span>
                 </Link>
