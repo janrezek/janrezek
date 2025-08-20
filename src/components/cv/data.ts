@@ -20,7 +20,7 @@ export const cvProfile: CVProfile = {
 };
 
 export const cvSummary: string =
-  "Junior Full‑stack Developer se zkušenostmi v Next.js, React, TypeScript, Tailwind CSS, Node.js, Prisma, PostgreSQL, Vercel a AWS. Silné zkušenosti s wordpressem, woocommerce, elementorem a vytváření custom wordpress plugin. Background v InfoSec.";
+  "Full‑stack Developer se zkušenostmi v Next.js, React, TypeScript, Tailwind CSS, Node.js, Prisma, PostgreSQL, Vercel a AWS. Silné zkušenosti s Wordpressem, Woocommerce, Elementorem a vytváření custom wordpress plugin. Background v InfoSec.";
 
 export const cvContact: CVContactInfo = {
   email: "hello@janrezek.me",
@@ -30,10 +30,10 @@ export const cvContact: CVContactInfo = {
 
 export const cvSkillCategories: CVSkillCategory[] = [
   { name: "Languages", skills: ["JavaScript", "TypeScript", "Python", "Java", "PHP", "HTML", "CSS"] },
+  { name: "Wordpress", skills: ["Wordpress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "WPML", "Custom Wordpress Plugins", "Custom Wordpress Themes"] },
   { name: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"] },
   { name: "Backend", skills: ["Next.js", "Node.js", "Prisma", "PostgreSQL", "FastAPI", "Flask"] },
   { name: "DevOps", skills: ["Vercel", "AWS", "CI/CD"] },
-  { name: "Wordpress", skills: ["Wordpress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "WPML", "Custom Wordpress Plugins", "Custom Wordpress Themes"] },
   { name: "AI", skills: ["OpenAI API", "Anthropic API", "Velké zkušenosti s prací s AI (ChatGPT, Claude, Cursor)"] },
   { name: "InfoSec", skills: ["Asymetrická kryptografie", "Symetrická kryptografie", "Hash funkce"] },
 ];
@@ -121,7 +121,7 @@ export const cvEducation: CVEducationItem[] = [
 ];
 
 export const cvCertifications: CVCertificationItem[] = [
-  { name: "Certifikace Z", issuer: "Issuer", year: "2022" },
+
 ];
 
 
