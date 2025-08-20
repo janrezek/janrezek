@@ -66,7 +66,7 @@ export const cvExperience: CVExperienceItem[] = [
     role: "Full‑stack Wordpress Developer",
     location: "Brno",
     startDate: "2022-09",
-    endDate: "NOW",
+    endDate: "Současnost",
     bullets: [
       "Vývoj a údržba Wordpress stránek a pluginů",
       "Vývoj custom pluginů a backend logiky.",
