@@ -1,5 +1,11 @@
 "use client";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Sidebar from "./cv/Sidebar";
+import Summary from "./cv/Summary";
+import Experience from "./cv/Experience";
+import Projects from "./cv/Projects";
+import Education from "./cv/Education";
+import { cvLastUpdated } from "./cv/data";
 
 type OpenFrom = { x: number; y: number } | null;
 
@@ -204,17 +210,6 @@ export default function CVReveal() {
     close();
   }, [close]);
 
-  const PlaceholderBlocks = useMemo(() => {
-    const count = 10;
-    return Array.from({ length: count }).map((_, i) => (
-      <div
-        key={i}
-        className="rounded-md bg-white/5 shimmer h-4"
-        style={{ width: `${60 + Math.random() * 35}%` }}
-      />
-    ));
-  }, []);
-
   const onGenerateCVClick = useCallback(() => {
     console.log("Generate CV");
   }, []);
@@ -227,7 +222,7 @@ export default function CVReveal() {
         aria-haspopup="dialog"
         aria-expanded={isOpen}
       >
-        See my CV
+        Zobrazit CV
       </button>
 
       {isOpen && (
@@ -249,39 +244,24 @@ export default function CVReveal() {
                     CV
                   </h2>
                   <div className="flex items-center gap-2">
-                  <button
-                    onClick={onGenerateCVClick}
-                    className="cursor-pointer inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm bg-white text-black hover:bg-white/80 active:bg-white/20 transition-colors"
-                    aria-label="Generate CV PDF"
-                  >
-                    Generate PDF
-                  </button>
-                  <button
-                    onClick={onCloseClick}
-                    className="cursor-pointer inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm bg-white/10 hover:bg-white/15 active:bg-white/20 transition-colors"
-                    aria-label="Close CV"
+
+                    <button
+                      onClick={onCloseClick}
+                      className="cursor-pointer inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm bg-white/10 hover:bg-white/15 active:bg-white/20 transition-colors"
+                      aria-label="Close CV"
                     >
-                      Close
+                      Zavřít
                     </button>
                   </div>
                 </div>
 
                 <div ref={scrollRef} className="relative p-6 grid grid-cols-1 md:grid-cols-3 gap-6 overflow-auto cv-content-enter cv-scroll cv-scroll--custom flex-1 min-h-0">
-                  <div className="md:col-span-1 space-y-4">
-                    <div className="h-28 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-sm text-white/80">
-                      Placeholder Photo
-                    </div>
-                    <div className="space-y-2">{PlaceholderBlocks}</div>
-                  </div>
+                  <Sidebar />
                   <div className="md:col-span-2 space-y-4">
-                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                      <div className="h-5 w-1/3 rounded-md bg-white/10 mb-3 shimmer" />
-                      <div className="space-y-2">{PlaceholderBlocks}</div>
-                    </div>
-                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                      <div className="h-5 w-1/2 rounded-md bg-white/10 mb-3 shimmer" />
-                      <div className="space-y-2">{PlaceholderBlocks}</div>
-                    </div>
+                    <Summary />
+                    <Experience />
+                    <Projects />
+                    <Education />
                   </div>
 
                   {scrollActive && (
@@ -294,7 +274,7 @@ export default function CVReveal() {
                   )}
                 </div>
                 <div className="px-5 py-2 border-t border-white/10 text-[11px] md:text-xs text-white/50">
-                  Last updated: —
+                  Naposledy aktualizováno: {cvLastUpdated}
                 </div>
               </div>
             </div>
