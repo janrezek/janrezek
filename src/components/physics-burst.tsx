@@ -389,7 +389,7 @@ export default function PhysicsBurst({ children }: { children: ReactNode }) {
           simRafRef.current = requestAnimationFrame(step);
           if (pendingReverseRef.current) {
             pendingReverseRef.current = false;
-            onClose(new CustomEvent("cv:close", { detail: lastOriginRef.current || origin }) as unknown as Event);
+            onClose();
           }
         });
       });
@@ -397,7 +397,7 @@ export default function PhysicsBurst({ children }: { children: ReactNode }) {
       // end of deferred open
     }
 
-    function onClose(e: Event) {
+    function onClose() {
       if (!isExplodedRef.current || isAnimatingRef.current) return;
       if (!outwardReadyRef.current) {
         pendingReverseRef.current = true;

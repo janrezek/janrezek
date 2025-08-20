@@ -11,7 +11,6 @@ type OpenFrom = { x: number; y: number } | null;
 
 export default function CVReveal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [openFrom, setOpenFrom] = useState<OpenFrom>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const sheetRef = useRef<HTMLDivElement | null>(null);
@@ -22,7 +21,6 @@ export default function CVReveal() {
   const open = useCallback((from: { x: number; y: number }) => {
     setOpenFrom(from);
     setIsOpen(true);
-    setIsAnimating(true);
     try {
       window.dispatchEvent(new CustomEvent("cv:open", { detail: from }));
     } catch {}
@@ -62,7 +60,6 @@ export default function CVReveal() {
     const handler = () => {
       overlay.removeEventListener("transitionend", handler);
       setIsOpen(false);
-      setIsAnimating(false);
       setOpenFrom(null);
     };
     overlay.addEventListener("transitionend", handler, { once: true });
@@ -119,7 +116,6 @@ export default function CVReveal() {
     if (prefersReduced) {
       overlay.style.setProperty("--cv-reveal-r", `${Math.hypot(vw, vh)}px`);
       overlay.classList.add("cv-open");
-      setIsAnimating(false);
       return;
     }
 
@@ -136,7 +132,6 @@ export default function CVReveal() {
       requestAnimationFrame(() => {
         overlay.classList.add("cv-open");
         overlay.style.setProperty("--cv-reveal-r", `${maxRadius + 24}px`);
-        setTimeout(() => setIsAnimating(false), 700);
       });
     });
   }, [isOpen, openFrom]);
@@ -210,9 +205,7 @@ export default function CVReveal() {
     close();
   }, [close]);
 
-  const onGenerateCVClick = useCallback(() => {
-    console.log("Generate CV");
-  }, []);
+  // PDF generátor dočasně vypnut
 
   return (
     <>
