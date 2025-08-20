@@ -20,7 +20,7 @@ export const cvProfile: CVProfile = {
 };
 
 export const cvSummary: string =
-  "Full‑stack Developer se zkušenostmi v Next.js, React, TypeScript, Tailwind CSS, Node.js, Prisma, PostgreSQL, Vercel a AWS. Silné zkušenosti s Wordpressem, Woocommerce, Elementorem a vytváření custom wordpress plugin. Background v InfoSec.";
+  "Full‑stack Developer se zkušenostmi v Next.js, React, TypeScript, Tailwind CSS, Node.js, Prisma, PostgreSQL, Vercel a AWS. Silné zkušenosti s WordPressem, Woocommerce, Elementorem a vytváření custom wordpress plugin. Background v InfoSec.";
 
 export const cvContact: CVContactInfo = {
   email: "hello@janrezek.me",
@@ -30,7 +30,7 @@ export const cvContact: CVContactInfo = {
 
 export const cvSkillCategories: CVSkillCategory[] = [
   { name: "Languages", skills: ["JavaScript", "TypeScript", "Python", "Java", "PHP", "HTML", "CSS"] },
-  { name: "Wordpress", skills: ["Wordpress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "WPML", "Custom Wordpress Plugins", "Custom Wordpress Themes"] },
+  { name: "Wordpress", skills: ["WordPress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "WPML", "Custom WordPress Plugins", "Custom WordPress Themes"] },
   { name: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"] },
   { name: "Backend", skills: ["Next.js", "Node.js", "Prisma", "PostgreSQL", "FastAPI", "Flask"] },
   { name: "DevOps", skills: ["Vercel", "AWS", "CI/CD"] },
@@ -56,50 +56,50 @@ export const cvExperience: CVExperienceItem[] = [
     startDate: "2021-09",
     endDate: "Současnost",
     bullets: [
-      "Vývoj a údržba Wordpress stránek a pluginů",
+      "Vývoj a údržba WordPress stránek a pluginů",
       "Opravy chyb, údržba a vylepšení stránek",
     ],
-    technologies: ["Wordpress", "Woocommerce", "Elementor", "Custom Wordpress Plugins"],
+    technologies: ["WordPress", "Woocommerce", "Elementor", "Custom WordPress Plugins"],
   },
   {
     company: "Audified",
-    role: "Full‑stack Wordpress Developer",
+    role: "Full‑stack WordPress Developer",
     location: "Brno",
     startDate: "2022-09",
     endDate: "Současnost",
     bullets: [
-      "Vývoj a údržba Wordpress stránek a pluginů",
+      "Vývoj a údržba WordPress stránek a pluginů",
       "Vývoj custom pluginů a backend logiky.",
     ],
-    technologies: ["Wordpress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "Custom Wordpress Plugins"],
+    technologies: ["WordPress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "Custom WordPress Plugins"],
   },
 ];
 
 export const cvProjects: CVProjectItem[] = [
   {
-    name: "Joyful Craftsmen - Wordpress Website",
-    description: "Vývoj a údržba Wordpress stránky a pluginů. Vývoj většího množství custom komponent.",
+    name: "Joyful Craftsmen - WordPress Website",
+    description: "Vývoj a údržba WordPress stránky a pluginů. Vývoj většího množství custom komponent.",
     url: "https://joyfulcraftsmen.com",
-    technologies: ["Wordpress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "Custom Wordpress Plugins"],
+    technologies: ["WordPress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "Custom WordPress Plugins"],
   },
 
   {
-    name: "Presendoo - Wordpress Website",
-    description: "Vytvoření wordpress webu s elementorem. Vývoj custom komponent.",
+    name: "Presendoo - WordPress Website",
+    description: "Vytvoření WordPress webu s elementorem. Vývoj custom komponent.",
     url: "https://presendoo.com",
-    technologies: ["Wordpress", "Elementor", "WPML"],
+    technologies: ["WordPress", "Elementor", "WPML"],
   },
   {
-    name: "Audified - Wordpress + Woocommerce Website",
-    description: "Vývoj a údržba wordpress webu s woocommerce + elementor. Vývoj custom pluginů a backend logiky. (U tohoto webu je připravován rebuild s důrazem na ryhlost a SEO)",
+    name: "Audified - WordPress + Woocommerce Website",
+    description: "Vývoj a údržba WordPress webu s woocommerce + elementor. Vývoj custom pluginů a backend logiky. (U tohoto webu je připravován rebuild s důrazem na ryhlost a SEO)",
     url: "https://audified.com",
-    technologies: ["Wordpress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "Custom Wordpress Plugins"],
+    technologies: ["WordPress", "Woocommerce", "Elementor", "ACF", "WP-Rocket", "Custom WordPress Plugins"],
   },
   {
-    name: "Dalších X wordpress webů",
+    name: "Dalších X WordPress webů",
     description: "Mohu dodat na vyžádání",
     url: "",
-    technologies: ["Wordpress", "Elementor"],
+    technologies: ["WordPress", "Elementor"],
   },
 ];
 
