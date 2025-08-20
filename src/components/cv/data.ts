@@ -13,7 +13,7 @@ import {
 export const cvLastUpdated: string = "20.08.2025"; // např. "srpen 2025"
 
 export const cvProfile: CVProfile = {
-  name: "Jan Rezek",
+  name: "Jan Rezek, 25 let",
   title: "Full‑stack Developer",
   location: "Brno, Česko",
   photoUrl: "/me.JPG", // volitelné: /me.jpg
