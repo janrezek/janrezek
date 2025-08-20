@@ -16,7 +16,7 @@ export const cvProfile: CVProfile = {
   name: "Jan Rezek",
   title: "Full‑stack Developer",
   location: "Brno, Česko",
-  photoUrl: "/me.jpg", // volitelné: /me.jpg
+  photoUrl: "/me.JPG", // volitelné: /me.jpg
 };
 
 export const cvSummary: string =
