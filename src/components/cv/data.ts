@@ -20,7 +20,7 @@ export const cvProfile: CVProfile = {
 };
 
 export const cvSummary: string =
-  "Full‑stack Developer se zkušenostmi v Next.js, React, TypeScript, Tailwind CSS, Node.js, Prisma, PostgreSQL, Vercel a AWS. Silné zkušenosti s WordPressem, Woocommerce, Elementorem a vytváření custom wordpress plugin. Background v InfoSec.";
+  "Full‑stack Developer se zkušenostmi v Next.js, React, TypeScript, Tailwind CSS, Node.js, Prisma, PostgreSQL, Vercel a AWS. Rozsáhlé zkušenosti s WordPressem, Woocommerce, Elementorem a vytváření custom WordPress pluginů. Background v InfoSec.";
 
 export const cvContact: CVContactInfo = {
   email: "hello@janrezek.me",
@@ -106,17 +106,17 @@ export const cvProjects: CVProjectItem[] = [
 export const cvEducation: CVEducationItem[] = [
   {
     school: "VUT FEKT",
-    degree: "Bc. – Informační Bezpečnost",
-    startDate: "2020",
-    endDate: "2023",
-    details: ["Bakalářská práce: Webové stránky jako elektronický důkaz https://www.vut.cz/studenti/zav-prace/detail/151212", "Informace o oboru https://www.vut.cz/studenti/programy/program/7911"],
-  },
-  {
-    school: "VUT FEKT",
     degree: "Ing. – Informační Bezpečnost",
     startDate: "2023",
     endDate: "2025",
     details: ["Diplomová práce: Nástroj pro uchování webových stránek v důkazní kvalitě https://www.vut.cz/studenti/zav-prace/detail/167312", "Informace o oboru https://www.vut.cz/studenti/programy/program/8924"],
+  },
+  {
+    school: "VUT FEKT",
+    degree: "Bc. – Informační Bezpečnost",
+    startDate: "2020",
+    endDate: "2023",
+    details: ["Bakalářská práce: Webové stránky jako elektronický důkaz https://www.vut.cz/studenti/zav-prace/detail/151212", "Informace o oboru https://www.vut.cz/studenti/programy/program/7911"],
   },
 ];
 
